@@ -1,45 +1,123 @@
 const fs = require('fs');
-let str1 = "This is the example file content.";
-// fs.writeFile('example.txt',str1,(err)=>{
+
+fs.mkdir('tutorial',(err)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log('Successfully Created a Directory.');
+    }
+});
+
+// fs.mkdir('tutorial',(err)=>{
 //     if(err){
 //         console.log(err);
 //     }
 //     else{
-//         console.log('File Successfully created');
-//         fs.readFile('example.txt','utf8',(err,file)=>{
+//         console.log('Successfully Created a Directory.')
+//         fs.rmdir('tutorial',(err)=>{
 //             if(err){
 //                 console.log(err);
 //             }
 //             else{
-//                 console.log(file);
+//                 console.log('Successfully Removed a Directory.')
 //             }
 //         })
 //     }
 // });
 
-// fs.rename('example.txt','example2.txt',(err)=>{
+// fs.writeFile('./tutorial/example.txt','Added Content',(err)=>{
 //     if(err){
 //         console.log(err);
 //     }
 //     else{
-//         console.log('Successfully changed file name!')
+//         console.log('Successfully Created a File.');
 //     }
 // });
-// str1 = 'Little addition';
-// fs.appendFile('example2.txt',str1,(err=>{
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log('Successfully Appended!');
-//     }
-// }));
 
-// fs.unlink('example2.txt',(err)=>{
+// fs.rmdir('tutorial',(err)=>{
 //     if(err){
 //         console.log(err);
 //     }
 //     else{
-//         console.log('Successfully Deleted!');
+//         console.log('Successfully Removed a Directory.')
+//     }
+// });
+
+// fs.unlink('./tutorial/example.txt',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('Successfully Removed a File.');
+//         fs.rmdir('tutorial',(err)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log('Successfully Removed a Directory.')
+//             }
+//         });
+//     }
+// });
+
+// fs.mkdir('tutorial',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('Successfully Created a Directory.');
+//         fs.writeFile('./tutorial/example.txt','Added Content',(err)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log('Successfully Created a File.');
+//             }
+//         });
+//         fs.writeFile('./tutorial/example2.txt','Added Content',(err)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log('Successfully Created a File.');
+//             }
+//         });                
+//     }
+// });
+
+// fs.readdir('tutorial',(err,files)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log(files);
+//     }
+// });
+
+// fs.readdir('tutorial',(err,files)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         for(let file of files){
+//             fs.unlink('./tutorial/' + file,(err)=>{
+//                 if(err){
+//                     console.log(err);
+//                 }
+//                 else{
+//                     console.log('Successfully Removed a File.');
+                    
+//                 }
+//             });
+//             fs.rmdir('tutorial',(err)=>{
+//                 if(err){
+//                     console.log(err);
+//                 }
+//                 else{
+//                     console.log('Successfully Removed a Directory.')
+//                 }
+//             });
+//         }
 //     }
 // });
