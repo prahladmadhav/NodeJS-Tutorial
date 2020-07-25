@@ -1,31 +1,45 @@
-const readline = require('readline');
-const rl = readline.createInterface({input : process.stdin,
-                                    output : process.stdout});
+const fs = require('fs');
+let str1 = "This is the example file content.";
+// fs.writeFile('example.txt',str1,(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('File Successfully created');
+//         fs.readFile('example.txt','utf8',(err,file)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log(file);
+//             }
+//         })
+//     }
+// });
 
-let num1 = Math.floor((Math.random() * 10) + 1)
-let num2 = Math.floor((Math.random() * 10) + 1)
-let answer = num1 + num2
+// fs.rename('example.txt','example2.txt',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('Successfully changed file name!')
+//     }
+// });
+// str1 = 'Little addition';
+// fs.appendFile('example2.txt',str1,(err=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('Successfully Appended!');
+//     }
+// }));
 
-rl.question(`(Q) What is ${num1} + ${num2}? \n(A) `,
-(userInput)=>{
-    if (userInput.trim() == answer){
-        rl.close();
-    }
-    else{
-        rl.setPrompt(`Incorrect! Try again. \n(A) `);
-        rl.prompt();
-        rl.on('line',(userInput)=>{
-            if(userInput.trim() == answer){
-                rl.close();
-            }
-            else{
-                rl.setPrompt(`Your answer ${userInput} is incorrect! Try again. \n(A) `);
-                rl.prompt();
-            }
-        })
-    }
-});
-
-rl.on('close',()=>{
-    console.log(`Correct`);
-})
+// fs.unlink('example2.txt',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log('Successfully Deleted!');
+//     }
+// });
