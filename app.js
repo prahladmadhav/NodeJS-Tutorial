@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 app.post('/',(req,res)=>{
     console.log(req.body);
     // database work here
-    res.json();
+    res.json({success : true});
 });
 
 app.get('/example',(req,res)=>{

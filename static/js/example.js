@@ -6,7 +6,7 @@ $(document).ready(()=>{
             type : 'post',
             contentType : 'application/json',
             data : JSON.stringify($('#form').serializeArray()),
-            success : (respose)=>{
+            success : (response)=>{
                 console.log('Successfully got Response');
                 console.log(response);
             }
